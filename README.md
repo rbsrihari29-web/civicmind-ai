@@ -158,7 +158,7 @@ civicmind-ai/
 
 ### Step 1: Clone & Configure Environment
 ```powershell
-cd "C:\Users\Srihari R B\.gemini\antigravity\scratch\civicmind-ai"
+cd "path\civicmind-ai"
 Copy-Item .env.example .env
 ```
 
@@ -167,7 +167,7 @@ Copy-Item .env.example .env
 .\scripts\run_backend.ps1
 # Or manually:
 cd backend
-$env:PYTHONPATH = "C:\Users\Srihari R B\.gemini\antigravity\scratch\civicmind-ai\backend"
+$env:PYTHONPATH = "path\civicmind-ai\backend"
 py -3.14 -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 *Backend runs on `http://localhost:8000`. Swagger API docs at `http://localhost:8000/docs`.*
@@ -189,7 +189,7 @@ To execute all 17 unit, integration, ML inference, and RAG tests:
 ```powershell
 .\scripts\run_tests.ps1
 # Or manually:
-$env:PYTHONPATH = "C:\Users\Srihari R B\.gemini\antigravity\scratch\civicmind-ai\backend"
+$env:PYTHONPATH = "path\civicmind-ai\backend"
 py -3.14 -m pytest backend/tests -v
 ```
 
