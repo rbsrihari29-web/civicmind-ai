@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: civicmind_db
+    environment:
+      POSTGRES_USER: civicmind
+      POSTGRES_PASSWORD: civicmind_secret_password
+      POSTGRES_DB: civicmind_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: civicmind_backend
+    environment:
+      DATABASE_URL: postgresql://civicmind:civicmind_secret_password@db:5432/civicmind_db
+      SECRET_KEY: civicmind-prod-docker-key-9876543210
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: llama3.2
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./ml-training/artifacts:/ml-training/artifacts
+      - ./knowledge-base:/knowledge-base
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: civicmind_frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

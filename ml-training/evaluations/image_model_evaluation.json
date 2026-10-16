@@ -1,0 +1,173 @@
+{
+  "model_name": "CivicNet Convolutional Classifier",
+  "model_version": "v1.0.0",
+  "architecture": "civicnet_4conv",
+  "evaluation_timestamp": "2026-10-16T14:36:02Z",
+  "test_dataset_size": 90,
+  "overall_test_accuracy": 0.9556,
+  "macro_precision": 0.9649,
+  "macro_recall": 0.9556,
+  "macro_f1": 0.9548,
+  "baseline_chance_accuracy": 0.1667,
+  "accuracy_gain_over_baseline": 0.7889,
+  "confusion_matrix": [
+    [
+      15,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      15,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      11,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      15,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      15
+    ]
+  ],
+  "classes": [
+    "damaged_infrastructure",
+    "fallen_tree_obstruction",
+    "garbage_accumulation",
+    "other_uncertain",
+    "pothole_road_damage",
+    "waterlogging_flooding"
+  ],
+  "per_class_metrics": {
+    "damaged_infrastructure": {
+      "display_name": "Damaged Public Infrastructure",
+      "precision": 0.7895,
+      "recall": 1.0,
+      "f1_score": 0.8824,
+      "support": 15
+    },
+    "fallen_tree_obstruction": {
+      "display_name": "Fallen Tree or Obstruction",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 15
+    },
+    "garbage_accumulation": {
+      "display_name": "Garbage Accumulation",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 15
+    },
+    "other_uncertain": {
+      "display_name": "Other / Normal Condition",
+      "precision": 1.0,
+      "recall": 0.7333,
+      "f1_score": 0.8462,
+      "support": 15
+    },
+    "pothole_road_damage": {
+      "display_name": "Pothole or Road Damage",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 15
+    },
+    "waterlogging_flooding": {
+      "display_name": "Waterlogging or Flooding",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 15
+    }
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.2587,
+      "train_acc": 0.6524,
+      "val_loss": 1.5602,
+      "val_acc": 0.3444
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6058,
+      "train_acc": 0.8524,
+      "val_loss": 0.3019,
+      "val_acc": 0.9333
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3211,
+      "train_acc": 0.9262,
+      "val_loss": 0.1683,
+      "val_acc": 0.9556
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.2773,
+      "train_acc": 0.9095,
+      "val_loss": 0.1383,
+      "val_acc": 0.9556
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.1939,
+      "train_acc": 0.9381,
+      "val_loss": 0.1571,
+      "val_acc": 0.9556
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.1914,
+      "train_acc": 0.9262,
+      "val_loss": 0.5811,
+      "val_acc": 0.8222
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.1702,
+      "train_acc": 0.9381,
+      "val_loss": 0.2591,
+      "val_acc": 0.8778
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.1724,
+      "train_acc": 0.9357,
+      "val_loss": 0.1079,
+      "val_acc": 0.9556
+    }
+  ]
+}
